@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manga Prospects</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <meta name="" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  </head>
+
+  <body>
+    
+    <!-- Navigation bar from here --!>
+    <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                 aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar">&nbsp;</span>
+                    <span class="icon-bar">&nbsp;</span>
+                    <span class="icon-bar">&nbsp;</span>
+                </button>
+                <a class="navbar-brand" href="/">Manga Prospects</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">このサイトについて</a></li>
+                    <li><a href="#">ユーザー登録</a></li>
+                    <li><a href="#">ログイン</a></li>
+                    <li><a href="#">ログアウト</a></li>
+                    <li><a href="#">管理者へ連絡</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+  
+    <%= yield %>
+  </body>
+</html>
