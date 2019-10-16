@@ -26,11 +26,15 @@
                     <span class="icon-bar">&nbsp;</span>
                     <span class="icon-bar">&nbsp;</span>
                 </button>
-                <a class="navbar-brand" href="/">Manga Prospects</a>
+                <!--<a class="navbar-brand" href="/">Manga Prospects</a>-->
+                <%= link_to 'Manga Prospects', root_path, class: "navbar-brand" %>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">このサイトについて</a></li>
+                    <!--<li><a href="#">このサイトについて</a></li>-->
+                    <li class="nav-item">
+                      <%= link_to "このサイトについて",pages_aboutus_path, class: "nav-link" %>
+                    </li>
                     <li><a href="#">ユーザー登録</a></li>
                     <li><a href="#">ログイン</a></li>
                     <li><a href="#">ログアウト</a></li>

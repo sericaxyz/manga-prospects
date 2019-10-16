@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: manga-prospects_production
-  username: manga-prospects
-  password: <%= ENV['MANGA-PROSPECTS_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
