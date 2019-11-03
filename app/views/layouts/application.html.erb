@@ -13,6 +13,9 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
     
     <!-- Navigation bar from here --!>
     <header>
@@ -35,9 +38,30 @@
                     <li class="nav-item">
                       <%= link_to "このサイトについて",pages_aboutus_path, class: "nav-link" %>
                     </li>
-                    <li><a href="#">ユーザー登録</a></li>
-                    <li><a href="#">ログイン</a></li>
-                    <li><a href="#">ログアウト</a></li>
+                    <% if ! logged_in? %>
+                      <li>
+                        <%= link_to "ユーザー登録",users_new_path, class: "nav-link" %>
+                      </li>
+                      <li class="nav-item">
+                        <%= link_to "ログイン",login_path, class: "nav-link" %>
+                      </li>
+                    <% else %>
+                      <li>
+                        <%= link_to "ユーザー登録",root_path, class: "nav-link" %>
+                      </li>
+                      <li class="nav-item">
+                        <%= link_to "ログイン",root_path, class: "nav-link" %>
+                      </li>
+                    <% end %>
+                    <% if logged_in? %>
+                      <li class="nav-item">
+                        <%= link_to logout_path,method: :delete do%>ログアウト<% end %>
+                      </li>
+                    <% else %>
+                      <li class="nav-item">
+                        <%= link_to "ログアウト",root_path,　class: "nav-link" %>
+                      </li>
+                    <% end %>
                     <!--<li><a href="#">管理者へ連絡</a></li>-->
                     <li class="nav-item">                    
                      <%= link_to "管理者へ連絡",inquiry_path, class: "nav-link" %>
@@ -48,6 +72,17 @@
     </nav>
 </header>
   
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+  
     <%= yield %>
+    
+    <script>
+      $(function(){
+        $(".alert").fadeOut(5000);
+      });
+    </script>
+    
   </body>
 </html>

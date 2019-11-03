@@ -1,0 +1,34 @@
+<div class="users-new-wrapper">
+  <div class = "row">
+    <div class="container">
+      <div class="col-md-offset-4 col-md-4 users-new-container">
+        <h1 class="text-center text-black">ユーザー登録</h1>
+
+        <%= form_for(@user) do |f| %>
+          <div class="form-group">
+            <%= f.label :name, 'お名前（ニックネーム可）' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :email, 'メールアドレス[ユーザーIDとして使用]' %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :password, 'パスワード' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :password_confirmation, 'パスワード（もう１度ご入力ください）' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        
+        <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
+        <% end %>
+
+    </div>
+    </div>
+  </div>
+</div>
