@@ -81,3 +81,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 
 gem "carrierwave"
+
+#Rails+CarrierWave+heroku環境でAWS S3へ画像をアップロード
+
+# gem 'fog'
+gem 'fog-aws'
+
+# gem 'dot_env'
