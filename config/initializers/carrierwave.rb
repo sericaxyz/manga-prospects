@@ -12,9 +12,6 @@ CarrierWave.configure do |config|
     aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
     aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     region: ENV['AWS_DEFAULT_REGION'],
-    # aws_access_key_id: 'AKIA3QE57KKSE3VDGM7H',
-    # aws_secret_access_key: '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',
-    # region: 'ap-northeast-1',
     path_style: true
   }
 
