@@ -7,8 +7,22 @@
             <h2 class="material-author">
               <%= material.user.name %>
             </h2>
+            
             <%= image_tag material.image.url %>
-            <%= image_tag 'icons/heart-black.png', class: 'material-index-icon' %>
+            
+            <% if !material.favorite_users.include?(current_user) %> 
+              <%= link_to favorites_path(material_id: material.id), method: :post do %>
+                 <%= image_tag 'icons/heart-black.png', class: 'material-index-icon' %>
+              <% end %>
+            <% else %>  
+              <%= link_to destroy_path(material_id: material.id), method: :post do %>
+                 <%= image_tag 'icons/heart-red.png', class: 'material-index-icon' %>
+              <% end %>
+            <% end %>
+            
+            <!-- 各マテリアルのお気に入りの数を表示 -->
+            <%= material.favorite_users.count %>
+            
             <%= image_tag 'icons/comment.png', class: 'material-index-icon' %>
             <p class="material-text">
               <%= material.description %>

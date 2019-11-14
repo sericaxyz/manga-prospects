@@ -1,6 +1,11 @@
 class MaterialsController < ApplicationController
+  
   def index
-    @materials = Material.order("updated_at desc")
+
+  @materials = Material.order("updated_at desc").includes(:favorite_users)
+#  @materials = Material.all.includes(:favorite_users)
+#  @materials = Material.order("updated_at desc")
+
   end
   
   def new
