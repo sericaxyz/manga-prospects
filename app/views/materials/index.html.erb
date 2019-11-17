@@ -23,10 +23,23 @@
             <!-- 各マテリアルのお気に入りの数を表示 -->
             <%= material.favorite_users.count %>
             
-            <%= image_tag 'icons/comment.png', class: 'material-index-icon' %>
+            <!-- コメントマークからコメント入力画面へのリンク-->
+            <%= link_to new_material_comment_path(material_id: material.id), method: :get do %>
+              <%= image_tag 'icons/comment.png', class: 'material-index-icon' %>
+            <% end %>
+            
             <p class="material-text">
               <%= material.description %>
             </p>
+            
+            　<h5>コメント</h5>　　
+
+             <% material.comments.each do |comment| %>
+             <div style="clear:both">
+               <%= comment.content %>
+             </div>
+             <% end %>
+            
           </div>
         </div>
       </div>

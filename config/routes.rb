@@ -33,5 +33,13 @@ Rails.application.routes.draw do
     get 'favorites/index' 
     post '/favorites', to: 'favorites#create'
     post '/destroy', to: 'favorites#destroy'
+    
+#コメント機能関連
+
+  resources :materials do 
+    resources :comments
+  end
+
+
 
 end

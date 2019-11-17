@@ -9,5 +9,8 @@ class User < ApplicationRecord
 
   has_many :materials
   has_many :favorites
+  has_many :favorite_materials, through: :favorites, source: 'material'
+  
+  has_many :comments 
 
 end
