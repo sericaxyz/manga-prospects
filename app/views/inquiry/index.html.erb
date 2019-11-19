@@ -1,9 +1,11 @@
-<p></br></p>
+<div class="users-new-wrapper">
+  <div class = "row">
+    <div class="container">
+      <div class="col-md-offset-4 col-md-5 users-new-container">
+        <h1 class="text-center text-black">サイト管理者へのメッセージ</h1>
+
 <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
-  <div class="page-header">
-    <h1>サイト管理者へのメッセージ</h1>
-  </div>
-  
+
 <% if @inquiry.errors.any? %>
   <div class="alert alter-danger" role="alert">
     <strong>入力内容にエラーがあります</strong>
@@ -15,19 +17,25 @@
   </div>
 <% end %>
 
- <table class="table">
-  <tr>
-    <th>お名前<span class="text-danger">(ニックネーム可)</span></th>
-    <td><%= f.text_field :name %></td>
-  </tr>
-  <tr>
-    <th>メールアドレス<span class="text-danger">(任意)</span></th>
-    <td><%= f.text_field :email %></td>
-  </tr>
-  <tr>
-    <th>サイト管理者へのメッセージ<span class="text-danger">(必須)</span></th>
-    <td><%= f.text_area :message %></td>
-  </tr>
- </table>
- <%= f.submit '確認', class: 'btn btn-primary' %>
+<div class="form-group">
+      <%= f.label :name, 'お名前（ニックネーム可）' %>
+      <%= f.text_field :name , class: 'form-control' %>
+</div>
+
+<div class="form-group">
+      <%= f.label :email, 'メールアドレス(任意)' %>
+      <%= f.text_field :email , class: 'form-control' %>
+</div>
+
+<div class="form-group">
+      <%= f.label :message, 'サイト管理者へのメッセージ(必須)' %>
+      <%= f.text_area :message , class: 'form-control' %>
+</div>
+
+ <%= f.submit '確認する', class: 'btn btn-primary btn-block' %>
 <% end %>
+
+    </div>
+    </div>
+  </div>
+</div>
