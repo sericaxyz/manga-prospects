@@ -88,3 +88,8 @@ gem "carrierwave"
 gem 'fog-aws'
 
 # gem 'dot_env'
+
+#メールフォームをBootstrapで
+gem 'simple_form'
+
+

@@ -7,8 +7,4 @@ class InquiryMailer < ActionMailer::Base
     mail(to: "manga.prospects@gmail.com", subject: 'メッセージを承りました')
   end
   
-  # def received_email(inquiry)
-  #   @url  = 'http://example.com/login'
-  #   mail(to: inquiry.email, subject: 'メッセージの内容を承りました。')
-  # end
 end
