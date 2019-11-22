@@ -1,41 +1,18 @@
 <!--<div class="users-new-wrapper">-->
   <!--<div class = "row">-->
   <!--  <div class="container">-->
-      <div class="col-md-offset-4 col-md-5 inquiry-container">
-        <h1 class="text-center text-black">サイト管理者へのメッセージ</h1>
+  <div class="col-md-offset-4 col-md-5 inquiry-container">
 
-<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
 
-<% if @inquiry.errors.any? %>
-  <div class="alert alter-danger" role="alert">
-    <strong>入力内容にエラーがあります</strong>
-    <ul>
-      <% @inquiry.errors.each do |attr, msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+  <%= simple_form_for(@inquiry, url: { action: :confirm }) do |f| %>
+    <h2>サイト管理者へのメッセージ</h2>
+    <%= f.input :name, label: "お名前（ニックネーム可）", placeholder: "20文字以内"  %>
+    <%= f.input :email, label: "メールアドレス", placeholder: "30文字以内"  %>
+    <%= f.input :message, as: :text, label: "メッセージ" %>
+    <%= f.button :submit, "確認画面へ", :class => "btn-primary" %>
+  <% end %>
+
   </div>
-<% end %>
-
-<div class="form-group">
-      <%= f.label :name, 'お名前（ニックネーム可）' %>
-      <%= f.text_field :name , class: 'form-control' %>
-</div>
-
-<div class="form-group">
-      <%= f.label :email, 'メールアドレス(任意)' %>
-      <%= f.text_field :email , class: 'form-control' %>
-</div>
-
-<div class="form-group">
-      <%= f.label :message, 'サイト管理者へのメッセージ(必須)' %>
-      <%= f.text_area :message , class: 'form-control' %>
-</div>
-
- <%= f.submit '確認する', class: 'btn btn-primary btn-block' %>
-<% end %>
-
-    </div>
   <!--  </div>-->
   <!--</div>-->
 <!--</div>-->
